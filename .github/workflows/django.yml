@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        postgres-version: ['10.8']
+        postgresversion: ['10.8', '10']
     services:
       postgres:
-        image: postgres: ${{matrix.postgres-version}}
+        image: postgres:${{matrix.postgresversion}}
         env:
           POSTGRES_USER: decide
           POSTGRES_PASSWORD: decide
