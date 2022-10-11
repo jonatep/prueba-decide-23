@@ -1,8 +1,3 @@
-build:
-    strategy:
-      matrix:
-        postgres-version: ['10.8']
-
 name: Python application
 
 on: [push]
@@ -11,7 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        postgres-version: ['10.8']
     services:
       postgres:
         image: postgres: ${{matrix.postgres-version}}
